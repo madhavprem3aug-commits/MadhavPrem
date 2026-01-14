@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MadhavPrem – Premium Artificial Jewelry</title>
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500&display=swap"
+    rel="stylesheet">
+
+  <style>
+    :root {
+      --gold: #d4a24c;
+      --dark-red: #5b0f1b;
+      --bg-red: #7a0f23;
+      --white: #ffffff;
+      --light: #f7f2ee;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #000;
+      color: var(--white);
+    }
+
+    /* ---------------- HEADER ---------------- */
+    header {
+      background: var(--light);
+      color: #333;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 3rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      color: var(--gold);
+      font-weight: 700;
+    }
+
+    nav a {
+      margin: 0 0.9rem;
+      text-decoration: none;
+      color: #666;
+      font-size: 0.85rem;
+      letter-spacing: 1px;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: var(--gold);
+    }
+
+    /* ---------------- HERO ---------------- */
+    .hero {
+      min-height: 90vh;
+      background: linear-gradient(rgba(88, 10, 24, 0.75), rgba(88, 10, 24, 0.75)),
+        url('home/hero-jewelry.jpg') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      padding: 4rem;
+    }
+
+    .hero-content {
+      max-width: 600px;
+    }
+
+    .hero small {
+      color: #f0d7a6;
+      letter-spacing: 2px;
+      font-size: 0.9rem;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 4.5rem;
+      margin: 1rem 0;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #f3e9e3;
+      margin-bottom: 2rem;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .btn {
+      padding: 0.9rem 1.8rem;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      cursor: pointer;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: #fff;
+    }
+
+    .btn-primary:hover {
+      background: #b98a36;
+    }
+
+    .btn-outline {
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      background: transparent;
+    }
+
+    .btn-outline:hover {
+      background: var(--gold);
+      color: #fff;
+    }
+
+    /* ---------------- RESPONSIVE ---------------- */
+    @media (max-width: 768px) {
+      .icons {
+        display: flex;
+        gap: 1rem;
+        font-size: 1.2rem;
+        cursor: pointer
+      }
+
+      nav {
+        display: none;
+        flex-direction: column;
+        background: #f7f2ee;
+        width: 100%;
+        padding: 1rem
+      }
+
+      nav.show {
+        display: flex
+      }
+
+      header {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .hero {
+        padding: 2rem;
+        text-align: center;
+      }
+
+      .hero h1 {
+        font-size: 3rem;
+      }
+
+      .buttons {
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo">MadhavPrem</div>
+    <nav id="navLinks">
+      <a href="#">EARRINGS</a>
+      <a href="#">BRACELETS</a>
+      <a href="#">NECKLACES</a>
+      <a href="#">BRIDAL</a>
+      <a href="#">RINGS</a>
+      <a href="#">KAMARBAND</a>
+      <a href="#">BANGLES</a>
+      <a href="#">SAREE PIN</a>
+    </nav>
+    <div class="icons">
+      <span id="cartBtn">🛒</span>
+      <span id="menuBtn">☰</span>
+    </div>
+  </header>
+
+  <!-- CART SIDEBAR -->
+  <div class="cart" id="cart">
+    <h3>Your Cart</h3>
+    <p>No items added yet.</p>
+    <button onclick="toggleCart()">Close</button>
+  </div>
+
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <small>TIMELESS ELEGANCE</small>
+      <h1>MadhavPrem</h1>
+      <p>
+        Premium artificial jewelry that captures elegance without the premium price.
+        Look stunning, spend smart.
+      </p>
+      <div class="buttons">
+        <a class="btn btn-primary" href="#">EXPLORE COLLECTION</a>
+        <a class="btn btn-outline" href="#">Bridal Showcase</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATEGORIES GRID -->
+  <section class="categories">
+    <div class="cat-grid">
+      <div class="cat-card"><img src="home/category-earrings.jpg">
+        <div class="overlay">
+          <h3>Earrings</h3>
+          <p>Jhumkas to Chandbalis</p>
+        </div>
+      </div>
+      <div class="cat-card"><img src="home/category-bracelet.jpg">
+        <div class="overlay">
+          <h3>Bracelets</h3>
+          <p>Delicate & Bold</p>
+        </div>
+      </div>
+      <div class="cat-card"><img src="home/category-necklace.jpg">
+        <div class="overlay">
+          <h3>Necklace Sets</h3>
+          <p>Statement Pieces</p>
+        </div>
+      </div>
+      <div class="cat-card"><img src="home/category-bridal.jpg">
+        <div class="overlay">
+          <h3>Bridal</h3>
+          <p>For Your Special Day</p>
+        </div>
+      </div>
+      <div class="cat-card"><img src="home/category-ring.jpg">
+        <div class="overlay">
+          <h3>Rings</h3>
+          <p>Timeless Elegance</p>
+        </div>
+      </div>
+      <div class="cat-card"><img src="home/category-kamarband.jpg">
+        <div class="overlay">
+          <h3>Kamarband</h3>
+          <p>Traditional Beauty</p>
+        </div>
+      </div>
+      <div class="cat-card"><img src="home/category-bangles.jpg">
+        <div class="overlay">
+          <h3>Bangles</h3>
+          <p>Stacking Style</p>
+        </div>
+      </div>
+      <div class="cat-card"><img src="home/category-sareepin.jpg">
+        <div class="overlay">
+          <h3>Saree Pin</h3>
+          <p>Perfect Finishing</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .categories {
+      padding: 4rem 3rem;
+      background: #faf7f3
+    }
+
+    .cat-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem
+    }
+
+    .cat-card {
+      position: relative;
+      border-radius: 14px;
+      overflow: hidden;
+      cursor: pointer
+    }
+
+    .cat-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: .4s
+    }
+
+    .cat-card:hover img {
+      transform: scale(1.08)
+    }
+
+    .overlay {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      padding: 1.2rem;
+      background: linear-gradient(transparent, rgba(0, 0, 0, .75));
+      color: #fff
+    }
+
+    .overlay h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem
+    }
+
+    .overlay p {
+      font-size: .85rem;
+      color: #e6d3a3
+    }
+  </style>
+
+  <script>
+    const cart = document.getElementById('cart');
+    const cartBtn = document.getElementById('cartBtn');
+    const menuBtn = document.getElementById('menuBtn');
+    const navLinks = document.getElementById('navLinks');
+
+    function toggleCart() { cart.classList.toggle('open') }
+    cartBtn.onclick = toggleCart;
+    menuBtn.onclick = () => navLinks.classList.toggle('show');
+    // Simple smooth scroll example
+    document.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', e => e.preventDefault());
+    });
+  </script>
+
+</body>
+
+</html>
